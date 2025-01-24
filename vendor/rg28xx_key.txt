@@ -1,0 +1,25 @@
+RG28XX:
+button=joystick=keycode=keyname
+
+A=0=1B=Escape
+B=1=0D=Return
+X=3=400000E4=Right Ctrl
+Y=2=20=Space
+
+Up=N/A
+Down=N/A
+Left=N/A
+Right=N/A
+
+SE=6=40000051=Down
+ST=7=40000050=Left
+M=8/11=40000052/61=Up/A
+Power=N/A=40000066=Power
+
+L1(LL)=4=6F=O
+L2(LR)=9=4000004F=Right
+R1(RR)=5=73=S
+R2(RL)=10=30=0
+
+VolumnUp=14=0x40000080=VolumnUp
+VolumnDown=13=0x40000081=VolumnDown
