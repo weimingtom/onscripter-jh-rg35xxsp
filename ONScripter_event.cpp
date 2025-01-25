@@ -135,7 +135,7 @@ ONS_Key transKey(ONS_Key key)
     return key;
 }
 
-static int volumn = 31; //0 to 31
+static int volume = 31; //0 to 31
 ONS_Key transJoystickButton(Uint8 button)
 {
 #if defined(PSP)  
@@ -179,8 +179,8 @@ L2(LR)=9=4000004F=Right
 R1(RR)=5=73=S
 R2(RL)=10=30=0
 
-VolumnUp=14=0x40000080=VolumnUp
-VolumnDown=13=0x40000081=VolumnDown
+VolumeUp=14=0x40000080=VolumeUp
+VolumeDown=13=0x40000081=VolumeDown
 */
 
     ONS_Key/*SDLKey*/ button_map[] = { SDLK_RETURN, /* 0=rg.A SDLK_ESCAPE*/
@@ -198,8 +198,8 @@ SDLK_s/*fast*/,
                             SDLK_DOWN,       /* 10=rg.R2   */
                             SDLK_UNKNOWN,/* 11=rg.Menu.repeat    */
                             SDLK_UNKNOWN,/* 12=N/A     */
-                            SDLK_UNKNOWN,/* 13=VolumnDown     */
-			    SDLK_UNKNOWN,/* 14=VolumnUp     */};
+                            SDLK_UNKNOWN,/* 13=VolumeDown     */
+			    SDLK_UNKNOWN,/* 14=VolumeUp     */};
 if (button == 8/*rg.menu*/) {
 	//endCommand();
         SDL_Event event;
@@ -208,23 +208,23 @@ if (button == 8/*rg.menu*/) {
 //        key = SDLK_UNKNOWN;
 } 
 if (button == 14 || button == 0x40000080) {
-//volumn up
+//volume up
 char str[256] = {0};
-++volumn;
-if (volumn > 31) volumn = 31;
-if (volumn < 0) volumn = 0;
+++volume;
+if (volume > 31) volume = 31;
+if (volume < 0) volume = 0;
 //https://steward-fu.github.io/website/handheld/rg28xx_volume.htm
-sprintf(str, "amixer set 'lineout volume' %d", volumn);
+sprintf(str, "amixer set 'lineout volume' %d", volume);
 system(str);
 }
 if (button == 13 || button == 0x40000081) {
-//volumn down
+//volume down
 char str[256] = {0};
---volumn;
-if (volumn > 31) volumn = 31;
-if (volumn < 0) volumn = 0;
+--volume;
+if (volume > 31) volume = 31;
+if (volume < 0) volume = 0;
 //https://steward-fu.github.io/website/handheld/rg28xx_volume.htm
-sprintf(str, "amixer set 'lineout volume' %d", volumn);
+sprintf(str, "amixer set 'lineout volume' %d", volume);
 system(str);
 }
     return button_map[button];

@@ -21,5 +21,5 @@ L2(LR)=9=4000004F=Right
 R1(RR)=5=73=S
 R2(RL)=10=30=0
 
-VolumnUp=14=0x40000080=VolumnUp
-VolumnDown=13=0x40000081=VolumnDown
+VolumeUp=14=0x40000080=VolumeUp
+VolumeDown=13=0x40000081=VolumeDown
